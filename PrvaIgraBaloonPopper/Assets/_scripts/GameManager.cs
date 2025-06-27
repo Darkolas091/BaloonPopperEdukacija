@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -5,23 +6,49 @@ public class GameManager : MonoBehaviour
     //[SerializeField] private Balloon[] balloonPrefabs;
     [SerializeField] private Balloon balloonPrefab;
     [SerializeField] private Transform[] spawnPoints;
+    [SerializeField] private float timeInterval = 0f;
+    [SerializeField] private float difficultyMultiplier = 0.9f;
+    private float multipliedTime;
+
+
     private Vector3 spawnArea;
     private int spawnAreaX;
     private int spawnAreaZ;
-    
-    [SerializeField] private float timeInterval = 0f;
 
-     private float timeCounter = 2f;
 
-    private void Update()
+    private float timeCounter = 2f;
+
+    private void Start()
     {
-        timeCounter -= Time.deltaTime;
-        if(timeCounter <= 0)
-        {
-            timeCounter = timeInterval;
-            BalloonSpawnPoint();
-        }
+        timeCounter = timeInterval;
+        multipliedTime = timeInterval;
+        //InvokeRepeating(nameof(BalloonSpawnPoint), timeCounter, 3);
+        StartCoroutine(BalloonSpawning());
     }
+
+
+    private IEnumerator BalloonSpawning()
+    {
+        if (multipliedTime > 1)
+        {
+            multipliedTime *= difficultyMultiplier;
+        }
+        yield return new WaitForSeconds(multipliedTime);
+        BalloonSpawnPoint();
+        StartCoroutine(BalloonSpawning());
+    }
+
+
+
+    //private void Update()
+    //{
+    //    timeCounter -= Time.deltaTime;
+    //    if (timeCounter <= 0)
+    //    {
+    //        timeCounter = timeInterval;//
+    //        BalloonSpawnPoint();
+    //    }
+    //}
 
     //private Balloon RandomBalloon()
     //{
@@ -32,7 +59,7 @@ public class GameManager : MonoBehaviour
     private void BalloonSpawnPoint()
     {
         //int random = RandomNumber(spawnPoints.Length);
-        //Balloon balloonClone = Instantiate(balloonPrefab, new Vector3(Random.Range(-10,11),0, Random.Range(0, 6)) , Quaternion.identity);
+        //Balloon balloonClone = Instantiate(balloonPrefab, new Vector3(Random.Range(-10, 11), 0, Random.Range(0, 6)), Quaternion.identity);
         //balloonClone.ChangeMaterial(RandomNumber(balloonClone.balloonMaterials.Length));
         //balloonClone.ChangeBalloonSpeed(balloonClone.balloonSpeed);
 

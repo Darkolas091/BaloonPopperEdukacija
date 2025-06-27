@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3022141e5a0146740921adffc01c26c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clicksToPop: 3
+  clicksToPop: 2
   balloonSpeed: 5
   balloonMaterials:
   - {fileID: 2100000, guid: 7bb2205515d407f4fab8f8cfb1907ed9, type: 2}
@@ -160,3 +160,4 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 971fb743572419f438957ac3f4daa820, type: 2}
   - {fileID: 2100000, guid: 246f075f82d8698449efaa85a58abfbc, type: 2}
   audioClip: {fileID: 0}
+  lifetime: 8

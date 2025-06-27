@@ -12,6 +12,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreenBalloon Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5322177171590503824, guid: 99bf50fca70552a4ba18c0f65f1cabb8, type: 3}
+      propertyPath: lifetime
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322177171590503824, guid: 99bf50fca70552a4ba18c0f65f1cabb8, type: 3}
+      propertyPath: clicksToPop
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322177171590503824, guid: 99bf50fca70552a4ba18c0f65f1cabb8, type: 3}
+      propertyPath: balloonSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9118864657524353785, guid: 99bf50fca70552a4ba18c0f65f1cabb8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
