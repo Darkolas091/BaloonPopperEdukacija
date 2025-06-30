@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class GameManager : MonoBehaviour
         timeCounter = timeInterval;
         multipliedTime = timeInterval;
         //InvokeRepeating(nameof(BalloonSpawnPoint), timeCounter, 3);
-        StartCoroutine(BalloonSpawning());
+        //StartCoroutine(BalloonSpawning());
     }
 
 
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
         BalloonSpawnPoint();
         StartCoroutine(BalloonSpawning());
     }
+
 
 
 
