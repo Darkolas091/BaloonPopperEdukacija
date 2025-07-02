@@ -27,15 +27,11 @@ public class Balloon : MonoBehaviour
     private void Start()
     {
         //Invoke(nameof(DestroyBallon),lifetime);
-        StartCoroutine(BaloonFade());
-        //StartCoroutine(IspisZadatak());
-        InvokeRepeating(nameof(WriteSomething), 1f, 0.5f);
+        //StartCoroutine(BaloonFade());
+
     }
 
-    private void WriteSomething()
-    {
-        Debug.Log("WriteSomething called");
-    }
+
 
     private IEnumerator IncreaseScale()
     {

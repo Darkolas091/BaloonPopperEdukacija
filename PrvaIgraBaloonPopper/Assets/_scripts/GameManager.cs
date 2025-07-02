@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
         timeCounter = timeInterval;
         multipliedTime = timeInterval;
         //InvokeRepeating(nameof(BalloonSpawnPoint), timeCounter, 3);
-        //StartCoroutine(BalloonSpawning());
+        StartCoroutine(BalloonSpawning());
     }
 
 
